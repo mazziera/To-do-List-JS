@@ -1,55 +1,57 @@
 const addButton = document.getElementById('botao-adicionar');
-const result = document.getElementById('resultado');
+const resultContainer = document.getElementById('resultado');
 
-// Cria um array vazio para armazenar os objetos de tarefa
-let tasks = [];
+// Evento do botão adicionar
+addButton.addEventListener("click", () => {
+    createTask();
+});
 
-function addTask() {
-    addButton.addEventListener("click", () => {
-        const inputTask = document.getElementById('tarefa-input').value;
+const createTask = () => {
+    // Obtendo o valor digitado pelo usuário
+    const newTaskText = document.getElementById('tarefa-input').value;
 
-        // Cria um novo objeto "nova tarefa"
-        const newTask = {
-            id: tasks.length + 1, // Gera um id incremental a partir do array tasks
-            taskName: inputTask // Define a string da tarefa
-        };
+    // Criando o elemento label que irá envolver elementos html da tarefa
+    const taskLabel = document.createElement('label');
+    taskLabel.innerHTML = `
+        <input type="checkbox" class="checkbox-marked">${newTaskText}
+        <button class="editButton">Editar</button>
+        <button class="deleteButton">Deletar</button>
+    `;
 
-        // Adiciona o objeto ao array de tarefas
-        tasks.push(newTask)
+    // Função deletar tarefa
+    deleteTask(taskLabel);
 
-        // O objeto newTask é passado como parâmetro para adicionar a nova tarefa à lista HTML(ul)
-        addTaskToList(newTask)
-    });
-}
+    // Função editar tarefa
+    editTask(taskLabel);
 
-// função para adicionar a nova tarefa à lista HTML (ul)
-function addTaskToList(task) {
-    //o parâmetro "task" é o objeto nova tarefa contendo as propriedades id e taskName
+    // Função concluir tarefa
+    finishTask(taskLabel);
 
-    // Cria um novo elemento li
-    const newTaskItem = document.createElement("li")
-    newTaskItem.classList.add("item-style")
-
-    const taskText = document.createElement("span")
-    taskText.textContent = task.taskName
-    newTaskItem.appendChild(taskText);
-
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    result.appendChild(deleteButton)
-
-
-
-    // Define o texto da tarefa como o conteúdo do elemento li
-    newTaskItem.textContent = task.taskName
-    
-    
-
-    // Adiciona o elemento li à lista result (ul)
-    result.appendChild(newTaskItem)
+    // Adicionando o elemento label criado dinamicamente ao documento html
+    resultContainer.appendChild(taskLabel);
 };
 
+// Deletar tarefa
+const deleteTask = (taskLabel) => {
+    // Obtendo o botão de deletar dentro da tarefa
+    const deleteButton = taskLabel.querySelector('.deleteButton');
+    deleteButton.addEventListener("click", () => {
+        taskLabel.remove();
+    });
+};
 
+// Editar tarefa
+const editTask = (taskLabel) => {
+    const editButton = taskLabel.querySelector('.editButton');
+    editButton.addEventListener("click", () => {
+        // Lógica para edição da tarefa
+    });
+};
 
-
-addTask();
+// Concluir tarefa
+const finishTask = (taskLabel) => {
+    const taskCompleted = taskLabel.querySelector('.checkbox-marked');
+    taskCompleted.addEventListener('click', () => {
+        taskLabel.classList.toggle('task-checked'); // Use toggle para alternar a classe
+    });
+};
