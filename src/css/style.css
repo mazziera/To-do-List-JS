@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:wght@400..700&display=swap');
+
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #042326, #0A3A40, #0F5959, #1D7373,#107361);
+    display: flex;
+    flex-direction: column;
+    flex: 0% 1 0%;
+    max-width: 500px;
+    width: 100%;
+    margin: 2rem auto;
+    border-radius: 1rem;
+
+    
+}
+
+.main-container{
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #404040;
+    border-radius: 10px;
+   
+}
+
+.cabecalho{
+    padding: 10px;
+    padding-left: 15px;
+    color: #EBF0F2;
+}
+
+.tarefa-container{
+    width: 100%;
+    padding: 1em 0;
+}
+
+.tarefa-container .tarefa-input {
+    width: 315px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #EBF0F2;
+    border-radius: 10px;
+}
+
+.tarefa-container input::placeholder{
+    color: #EBF0F2;
+}
+
+.botao-adicionar{
+    padding: 10px 8px;
+    margin-left: 5px;
+    background-color: transparent;
+    border: 1px solid #EBF0F2;
+    border-radius: 10px;
+    color: #EBF0F2;
+    transition: 0.7s ease-in-out;
+}
+
+.botao-adicionar:hover{
+    background-color: #04BF68;
+    border: 1px solid #04BF68;
+}
+
+#resultado{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#resultado .tasks{
+    padding: 10px ;
+    /* margin-top: 15px; */
+    border-radius: 10px;
+    border: 1px solid #F28729;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    color: white;
+}
+
+.taskButtons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+    border: none;
+}
+
+.taskButtons button{
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.editButton{
+    color: #04BF68;
+}
+
+.deleteButton{
+    color: #d9184b;
+}
+
+.task-checked{
+    text-decoration: line-through;
+    color: #04BF68;
+    transition: 1s ease-out;
+}
+
+.borrar-fundo{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+.modal-container {
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    overflow: auto;
+   
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
+.modal-container .conteudo-modal{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.borrar-fundo.esconder,
+.modal-container.esconder{
+  display: none;
+}

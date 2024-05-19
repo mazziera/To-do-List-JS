@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do-list JS</title>
     <script src="index.js" defer></script>
-
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body>
     <main class="main-container">
       <section class="cabecalho">
-        <h1>TO-DO-LIST</h1>
-        <h2>Crie a sua lista de tarefas!</h2>
+        <h2>Crie a sua lista de tarefas</h2>
       </section>
 
       <!-- Área usuário -->
-      <section>
-        <input
-          type="text" placeholder="Adicionar uma nova tarefa" id="tarefa-input"/>
+      <section class="tarefa-container">
+        <input type="text" placeholder="Adicionar uma nova tarefa" class="tarefa-input" id="tarefa-input"/>
 
-        <button type="button" id="botao-adicionar">Adicionar</button>
+        <button type="button" class="botao-adicionar" id="botao-adicionar">Adicionar</button>
       </section>
 
       <!-- Container tarefas criadas -->
@@ -47,5 +45,6 @@
       </div>
 
     </main>
+    
   </body>
 </html>

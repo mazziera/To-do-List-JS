@@ -17,15 +17,19 @@ const createTask = () => {
     // Criando o elemento label que irá envolver elementos html da tarefa
     const taskLabel = document.createElement('label');
     taskLabel.innerHTML = `
-        <input type="checkbox" class="checkbox-marked">
-        <span class="task-text">${newTaskText}</span>
-        <button class="editButton">Editar</button>
-        <button class="deleteButton">Deletar</button>
+        <div class="tasks">
+            <input type="checkbox" class="checkbox-marked">
+            <span class="task-text">${newTaskText}</span>
+            <div class="taskButtons">
+                <button class="editButton">Editar</button>
+                <button class="deleteButton">Deletar</button>
+            </div>
+        </div>
     `;
 
     deleteTask(taskLabel);  // Função deletar tarefa
     editTask(taskLabel); // Função editar tarefa
-    finishTask(taskLabel);// Função concluir tarefa
+    finishTask(taskLabel); // Função concluir tarefa
 
     // Adicionando o elemento label criado dinamicamente ao documento html
     resultContainer.appendChild(taskLabel);
@@ -84,6 +88,11 @@ const editTask = (taskLabel) => {
 const finishTask = (taskLabel) => {
     const taskCompleted = taskLabel.querySelector('.checkbox-marked');
     taskCompleted.addEventListener('click', () => {
-        taskLabel.classList.toggle('task-checked'); // Usando toggle para alternar a classe
+        const taskText = taskLabel.querySelector('.task-text');
+
+        if (taskText) {
+            taskText.classList.toggle('task-checked'); 
+            // Usando toggle para alternar a classe no elemento <span>
+        }
     });
 };
