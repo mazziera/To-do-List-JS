@@ -87,6 +87,7 @@ button {
 }
 
 .tasks span {
+  width: 100%;
   font-weight: 500;
 }
 
