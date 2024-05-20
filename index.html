@@ -7,6 +7,7 @@
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/modal.css">
   </head>
   <body>
     <main class="main-container">
@@ -15,7 +16,7 @@
       </section>
 
       <!-- Área usuário -->
-      <section class="tarefa-container">
+      <section class="criar-tarefa-container">
         <input type="text" placeholder="Adicionar uma nova tarefa" class="tarefa-input" id="tarefa-input"/>
 
         <button type="button" class="botao-adicionar" id="botao-adicionar">Adicionar</button>
@@ -25,9 +26,11 @@
       <ul id="resultado"></ul>
 
       <!-- Modal HTML -->
-      <div class="borrar-fundo esconder"></div>
+      <div class="borrar-fundo esconder">
+        <!-- div que irá separar o modal do container de tarefas -->
+      </div>
       <div class="modal-container esconder">
-        <h3>Editar Tarefa</h3>
+        <h3 class="titulo-modal">Editar Tarefa</h3>
 
         <hr />
 

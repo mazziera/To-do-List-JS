@@ -1,149 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:wght@400..700&display=swap");
 
-
-body{
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #042326, #0A3A40, #0F5959, #1D7373,#107361);
-    display: flex;
-    flex-direction: column;
-    flex: 0% 1 0%;
-    max-width: 500px;
-    width: 100%;
-    margin: 2rem auto;
-    border-radius: 1rem;
-
-    
+body {
+  max-width: 500px;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #042326,
+    #0a3a40,
+    #0f5959,
+    #1d7373,
+    #107361
+  );
+  display: flex;
+  flex-direction: column;
+  flex: 0% 1 0%;
+  width: 100%;
+  margin: 2rem auto;
+  border-radius: 1rem;
 }
 
-.main-container{
-    max-width: 600px;
-    padding: 2rem;
-    background-color: #404040;
-    border-radius: 10px;
-   
+.main-container {
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #f2e7dc;
+  border-radius: 10px;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.507);
 }
 
-.cabecalho{
-    padding: 10px;
-    padding-left: 15px;
-    color: #EBF0F2;
+.cabecalho {
+  padding: 10px 0;
+  color: #023e73;
 }
 
-.tarefa-container{
-    width: 100%;
-    padding: 1em 0;
+.tarefa-container {
+  width: 100%;
+  padding: 1em 0;
 }
 
-.tarefa-container .tarefa-input {
-    width: 315px;
-    padding: 10px;
-    outline: none;
-    background-color: transparent;
-    border: 1px solid #EBF0F2;
-    border-radius: 10px;
+.criar-tarefa-container .tarefa-input {
+  width: 340px;
+  padding: 10px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #023e73;
+  border-radius: 10px;
+  font-weight: 500;
 }
 
-.tarefa-container input::placeholder{
-    color: #EBF0F2;
+.criar-tarefa-container input::placeholder {
+  color: #0d0d0d73;
 }
 
-.botao-adicionar{
-    padding: 10px 8px;
-    margin-left: 5px;
-    background-color: transparent;
-    border: 1px solid #EBF0F2;
-    border-radius: 10px;
-    color: #EBF0F2;
-    transition: 0.7s ease-in-out;
+.botao-adicionar {
+  padding: 10px 8px;
+  margin-left: 5px;
+  background-color: #023e73;
+  border: 1px solid #023e73;
+  border-radius: 10px;
+  color: #ebf0f2;
+  transition: 0.7s ease-in-out;
 }
 
-.botao-adicionar:hover{
-    background-color: #04BF68;
-    border: 1px solid #04BF68;
+.botao-adicionar:hover {
+  background-color: #038c7f;
+  border: 1px solid #038c7f;
 }
 
-#resultado{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+button {
+  cursor: pointer;
+  border: none;
 }
 
-#resultado .tasks{
-    padding: 10px ;
-    /* margin-top: 15px; */
-    border-radius: 10px;
-    border: 1px solid #F28729;
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    color: white;
+#resultado {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.taskButtons{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    background-color: transparent;
-    border: none;
+#resultado .tasks {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #023e73;
+  display: flex;
+  gap: 10px;
 }
 
-.taskButtons button{
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-    margin-left: 15px;
+.tasks span {
+  font-weight: 500;
 }
 
-.editButton{
-    color: #04BF68;
+.tasks .task-checked {
+  text-decoration: line-through;
+  color: #038c7f;
+  transition: 1s ease-out;
 }
 
-.deleteButton{
-    color: #d9184b;
+.taskButtons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
 }
 
-.task-checked{
-    text-decoration: line-through;
-    color: #04BF68;
-    transition: 1s ease-out;
+.taskButtons button {
+  background-color: transparent;
+  font-size: 16px;
+  margin-left: 15px;
 }
 
-.borrar-fundo{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5;
+.editButton {
+  color: #027373;
 }
 
-.modal-container {
-    width: 400px;
-    padding: 10px;
-    background-color: white;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    overflow: auto;
-   
+.deleteButton {
+  color: #d9184b;
 }
 
-button{
-    cursor: pointer;
+.editButton:hover,
+.deleteButton:hover {
+  transform: scale(1.1);
+  transition: 0.7s ease-out;
 }
 
-
-
-.modal-container .conteudo-modal{
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.borrar-fundo.esconder,
-.modal-container.esconder{
-  display: none;
+.borrar-fundo {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
 }

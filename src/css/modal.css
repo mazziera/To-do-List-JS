@@ -1,0 +1,92 @@
+.modal-container {
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  background-color: #f2e7dc;
+  border-radius: 10px;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.507);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow: auto;
+  color: #023e73;
+}
+
+.modal-container .conteudo-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo-modal .titulo-modal {
+  font-size: 30px;
+  border-bottom: 1px solid gray;
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+.conteudo-modal label {
+  padding-left: 4px;
+  color: #000;
+}
+
+#editar-tarefa-input {
+  width: 340px;
+  padding: 10px;
+  margin-top: 4px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #023e73;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.modal-container .botoes {
+  margin-top: 20px;
+}
+
+.botoes #botao-cancelar {
+  background-color: transparent;
+  border: 1px solid gray;
+}
+
+#botao-cancelar:hover {
+  background-color: gray;
+  transition: 0.7s ease-in-out;
+}
+
+.botoes #botao-salvar {
+  background-color: #023e73;
+  color: #f2e7dc;
+}
+
+.botoes button {
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.borrar-fundo.esconder,
+.modal-container.esconder {
+  display: none;
+}
+
+.modal-container.mostrar {
+  animation: slideDownModal 0.7s forwards; /* Aplica a animação de deslizamento */
+  opacity: 1; /* Torna o modal visível */
+}
+
+/* Definindo a animação de deslizamento do modal*/
+@keyframes slideDownModal {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}

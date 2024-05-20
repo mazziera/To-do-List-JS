@@ -63,6 +63,7 @@ const editTask = (taskLabel) => {
             // Abrir modal
             modal.classList.remove('esconder');
             blurToDoList.classList.remove('esconder');
+            modal.classList.add('mostrar');
 
             if (closeModalButton) { // fechar modal -> cancelar edição
                 closeModalButton.addEventListener("click", () => {
@@ -78,6 +79,7 @@ const editTask = (taskLabel) => {
                 currentTaskText.textContent = editTaskInput.value.trim(); 
                 modal.classList.add('esconder');
                 blurToDoList.classList.add('esconder');
+                modal.classList.remove('mostrar');
             }, { once: true })
             
         }
