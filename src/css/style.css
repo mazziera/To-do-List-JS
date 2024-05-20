@@ -98,7 +98,6 @@ button {
 }
 
 .taskButtons {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   background-color: transparent;
