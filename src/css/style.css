@@ -38,7 +38,7 @@ body {
 }
 
 .criar-tarefa-container .tarefa-input {
-  width: 340px;
+  width: 320px;
   padding: 10px;
   outline: none;
   background-color: transparent;
@@ -131,4 +131,26 @@ button {
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 5;
+}
+
+footer{
+  margin-top: 100%;
+}
+
+@media (max-width: 480px) {
+  .main-container{
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .criar-tarefa-container .tarefa-input{
+    width: 300px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .criar-tarefa-container .tarefa-input{
+    width: 200px;
+  }
 }
